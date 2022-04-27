@@ -18,7 +18,8 @@ namespace OnlineShopMVC.Areas.Admin
 
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", Controller= "Home", id = UrlParameter.Optional }
+                new { action = "Index", Controller= "Home", id = UrlParameter.Optional },
+                new[] { "OnlineShopMVC.Areas.Admin.Controllers" }
             );
         }
     }
