@@ -13,16 +13,16 @@ namespace Model
         private OnlineShopDbContext context = null;
         public AccountModels()
         {
-
+            context = new OnlineShopDbContext();
         }
-        public bool Login (string _username, int _password)
+        public bool Login(string _username, string _password)
         {
-            var sqlParams = new SqlParameter[]
+            object[] sqlParams =  
             {
                 new SqlParameter("@UserName", _username),
                 new SqlParameter("password", _password)
             };
-            var res = context.Database.SqlQuery<bool>("Sp_Account_Login @UserName, @Password",sqlParams).SingleOrDefault();
+            bool res = context.Database.SqlQuery<bool>("Sp_Account_Login @UserName,@Password", sqlParams).SingleOrDefault();
             return res;
         }
     }
