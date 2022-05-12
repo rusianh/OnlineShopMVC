@@ -15,5 +15,6 @@ namespace Model.Framework
 
         [StringLength(20)]
         public string Password { get; set; }
+
     }
 }
